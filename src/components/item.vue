@@ -1,0 +1,37 @@
+<template>
+    <div class='list-item editingClass editing'> <!-- 最外层容器 -->
+        <label class='checkbox'>   <!-- 自定义的多选框 -->
+            <input type='checkbox' v-model='item.checked'>
+            <span class='checkbox-custom'></span>
+        </label>
+        <input type='text' v-model='item.text' placeholder='写点什么。。' >  <!-- 绑定item.text -->
+        <a class='delete-item'>   <!-- 删除图标 -->
+            <span class='icon-trash'></span>
+        </a>
+    </div>
+</template>
+
+<script>
+// item是todo的子组件，他接受一个对象item，来进行处理
+    export default{
+        //props:['item']  //子组件显式的用props 选项声明它期待获得的数据，这里申明它想要一个叫做'item'的数据
+        props:{
+            item:{
+                type:Object,
+                default: ()=>{
+                    return {
+                        checked:false,
+                        text:'你好，世界'
+                    }
+                }
+            }
+        }
+    };
+</script>
+
+<style lang='less'>
+@import '../common/style/list-items.less';
+</style>
+
+
+
