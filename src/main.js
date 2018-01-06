@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Mock from './mock'
+import store from './vuex/store'
 
 Vue.config.productionTip = false
 
@@ -14,6 +15,7 @@ Mock.start();
 new Vue({
   el: '#app',
   router,
+  store,           // 注入
   template: '<App/>',
   components: { App }
 })
